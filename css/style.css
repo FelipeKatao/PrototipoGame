@@ -7,6 +7,18 @@ body{
     margin-top: 2vh;
     position: relative;
     background-color: #a52a2a;
+    overflow: hidden;
+}
+
+#teste{
+    background-color: #ffff00;
+    height: 10vh;
+    width: 10vh;
+    text-align: center;
+    margin-top: 20vh;
+    margin-left: 188vh;
+
+    position: absolute;
 }
 
 #warning-base{visibility: hidden; height: 0; background-color: #ff0000;}
