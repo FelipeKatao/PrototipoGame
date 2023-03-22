@@ -1,0 +1,17 @@
+body{
+    background-color: #000000;
+}
+.container-page{
+    height: 90vh;
+    width: 100%;
+    margin-top: 2vh;
+    position: relative;
+    background-color: #a52a2a;
+}
+
+#warning-base{visibility: hidden; height: 0; background-color: #ff0000;}
+
+@media screen and (max-width: 430px) and (max-height: 930px) {
+    #conainer-base{visibility: hidden; height: 0; background-color: #ff0000;}
+    #warning-base{visibility:visible; height: 90vh; background-color: #ffff00; text-align: center;}    
+  }
