@@ -47,6 +47,10 @@ function GenerateHudBase()
     {
       ButtonAtaque.style.opacity = "0.6"
       ButtonAtaque.style.cursor = "not-allowed"
+      document.getElementById("blob").classList.add("damage")
+      OctElem.CreateEvent(()=>{
+        document.getElementById("blob").classList.remove("damage")
+      },1000)
       Batalha = true
     }
     

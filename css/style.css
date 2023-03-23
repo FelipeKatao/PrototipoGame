@@ -24,6 +24,20 @@ body{
     animation-iteration-count: infinite;
 }
 
+.damage{
+    animation-name: Damage_anim;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes Damage_anim{
+    0% { filter: brightness(200%); opacity: 0.8;}
+    50%{ filter: brightness(160%); opacity: 0.6}
+    60%{ filter: brightness(130%);opacity: 0.3}
+    70%{ filter: brightness(120%);opacity: 0.1}
+    100%{ filter: brightness(100%); opacity: 1}
+}
+
 @keyframes animateChar_01 {
     0% {transform: scaleX(1)}
     50% {transform: scaleX(1.2)}
