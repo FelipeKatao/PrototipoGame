@@ -1,16 +1,6 @@
 import Oct8 from "../Oct8-alpha/Oct8/Oct8.js"
 import Oct8Events from "../Oct8-alpha/Oct8/Oct8Events.js"
-
-
-//Classe para os perosnagens do jogo
-class Personagens{
-   personagens = {
-    aliados:[["Heroi","../img/image832.png",10],"Mago"]
-   }
-   inimigos= {
-    inimigos_base:[["blob","../img/Enemyt.png",4]]
-   }
-}
+import Personagens from "./Perosnagens.js"
 
 //Classe de criação do mundo
  
@@ -37,32 +27,11 @@ class Game{
 
 //Variaveis Base
 var OctElem = new Oct8()
-let Chars = new Personagens()
+let Personagens_game = new Personagens()
 
-
-//Criação de fabricas
-function CreateChar(persogem){
-  var char = OctElem.CreateContainerElement(persogem[0],"conainer-base",null,"div")
-  OctElem.ModifyPropsDefault(char,[50],[40],[40],[40])
-  char.style.backgroundImage = "url('"+persogem[1]+"')"
-  char.style.backgroundSize = "100%"
-
-  var lifebar = OctElem.CreateContainerElement(persogem[0]+"barraVida","conainer-base","barra-vida","div")
-  OctElem.ModifyPropsDefault(lifebar,[50],[1],[(persogem[2]*2)],[4])
-}
-
-function genrateEnemy(inimigo){
-  var enemy = OctElem.CreateContainerElement(inimigo[0],"conainer-base","animateChar","div")
-  OctElem.ModifyPropsDefault(enemy,[120],[-50],[20],[20])
-  enemy.style.backgroundImage = "url('"+inimigo[1]+"')"
-  enemy.style.backgroundSize = "100%"
-
-  var lifebar = OctElem.CreateContainerElement(inimigo[0]+"barraVida","conainer-base","barra-vida","div")
-  OctElem.ModifyPropsDefault(lifebar,[124],[1],[(inimigo[2]*2)],[4])
-}
-
-OctElem.CreateObjectFactory(CreateChar,"Personagem")
-OctElem.CreateObjectFactory(genrateEnemy,"Inimigo")
+//Criação de Fabricas bases
+OctElem.CreateObjectFactory(Personagens_game.CreateChar,"Personagem")
+OctElem.CreateObjectFactory(Personagens_game.genrateEnemy,"Inimigo")
 
 //HUD do game
 function GenerateHudBase()
@@ -81,8 +50,10 @@ function GenerateHudBase()
 // Gerar Cenas do Games
 function CreateTutobasic()
 {
-  OctElem.AppendObjectFacyotyTo("Personagem",Chars.personagens.aliados[0])
-  OctElem.AppendObjectFacyotyTo("Inimigo",Chars.inimigos.inimigos_base[0])
+
+  //Personagens_game ,Chars.personagens.aliados[0]
+  OctElem.AppendObjectFacyotyTo("Personagem",Personagens_game.personagens.aliados[0])
+  OctElem.AppendObjectFacyotyTo("Inimigo",Personagens_game.inimigos.inimigos_base[0])
   GenerateHudBase()
 }
 OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
