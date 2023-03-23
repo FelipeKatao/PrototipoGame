@@ -26,6 +26,7 @@ class Game{
 }
 
 //Variaveis Base
+var Batalha = false
 var OctElem = new Oct8()
 let Personagens_game = new Personagens()
 
@@ -42,20 +43,24 @@ function GenerateHudBase()
   ButtonAtaque.style.backgroundSize = "100%"
 
   ButtonAtaque.addEventListener("click",()=>{
-    ButtonAtaque.style.opacity = "0.6"
-    ButtonAtaque.style.cursor = "not-allowed"
+    if(Batalha == false)
+    {
+      ButtonAtaque.style.opacity = "0.6"
+      ButtonAtaque.style.cursor = "not-allowed"
+      Batalha = true
+    }
+    
   })
 }
 
 // Gerar Cenas do Games
 function CreateTutobasic()
 {
-
-  //Personagens_game ,Chars.personagens.aliados[0]
   OctElem.AppendObjectFacyotyTo("Personagem",Personagens_game.personagens.aliados[0])
   OctElem.AppendObjectFacyotyTo("Inimigo",Personagens_game.inimigos.inimigos_base[0])
   GenerateHudBase()
 }
+
 OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
 
 
