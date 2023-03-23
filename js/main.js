@@ -71,6 +71,11 @@ function GenerateHudBase()
   OctElem.ModifyPropsDefault(ButtonAtaque,[60],[-30],[8],[8])
   ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
   ButtonAtaque.style.backgroundSize = "100%"
+
+  ButtonAtaque.addEventListener("click",()=>{
+    ButtonAtaque.style.opacity = "0.6"
+    ButtonAtaque.style.cursor = "not-allowed"
+  })
 }
 
 // Gerar Cenas do Games
