@@ -9,6 +9,23 @@ body{
     background-color: #a52a2a;
     overflow: hidden;
 }
+.barra-vida
+{
+    background-color: #ff0000;
+}
+
+.animateChar{
+    animation-name: animateChar_01;
+    animation-duration: 3s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animateChar_01 {
+    0% {transform: scaleX(1)}
+    50% {transform: scaleX(1.2)}
+    100%{transform: scaleX(1)}
+}
 
 #teste{
     background-color: #ffff00;
