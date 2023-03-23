@@ -13,6 +13,9 @@ body{
 {
     background-color: #ff0000;
 }
+.bt_hud{
+    position: absolute;
+}
 
 .animateChar{
     animation-name: animateChar_01;
