@@ -53,15 +53,22 @@ function GenerateHudBase()
       ButtonAtaque.style.opacity = "0.6"
       ButtonAtaque.style.cursor = "not-allowed"
       if(_Service_Cenabatalha.CalculoAcao(Personagens_game.personagens.aliados[0][3][0])){
-        document.getElementById("blob").classList.add("damage") 
+        document.getElementById("blob").classList.add("damage")
+        let Elememt =  document.getElementById("blobbarraVida")
+        let Calc = parseInt(Elememt.style.width) - 4
+        Elememt.style.width = Calc+"vh"
       }
       else
       {
         document.getElementById("Heroi").classList.add("damage")
+        let Elememt =  document.getElementById("HeroibarraVida")
+        let Calc = parseInt(Elememt.style.width) - 4
+        Elememt.style.width = Calc+"vh"
       }
       OctElem.CreateEvent(()=>{       
           document.getElementById("blob").classList.remove("damage")
           document.getElementById("Heroi").classList.remove("damage")
+          VerificarDano()
           Batalha = false
           ButtonAtaque.style.opacity = "1"
           ButtonAtaque.style.cursor = "allowed"
@@ -93,6 +100,9 @@ _Service_Cenabatalha.DefinirJogadores(Personagens_game.inimigos.inimigos_base[0]
 //Render 
 OctElem.ExecuteScene("MakeTuto")
 
-OctElem.CreateEvent(()=>{
-  console.log(_Service_Cenabatalha.Acao_escolhidas)
-},100)
+function VerificarDano(){
+  if(parseInt(document.getElementById("HeroibarraVida").style.width)==0 || parseInt(document.getElementById("blobbarraVida").style.width)==0 )
+  {
+    window.location.reload()
+  }
+}
