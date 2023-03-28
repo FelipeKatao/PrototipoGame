@@ -7,7 +7,7 @@ class Personagens{
     }
     personagens = {
      aliados:[["Heroi","../img/image832.png",10,
-     [this.StatusAcerto.Alta,this.StatusAcerto.baixo,this.StatusAcerto.baixo]]
+     [this.StatusAcerto.baixo,this.StatusAcerto.baixo,this.StatusAcerto.baixo]]
      ,["Mago"]]
     }
     inimigos= {

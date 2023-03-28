@@ -46,17 +46,27 @@ function GenerateHudBase()
 
   //Clique de  evento 
   ButtonAtaque.addEventListener("click",()=>{
+    console.log("Batalha: "+Batalha)
     if(Batalha == false)
     {
+      Batalha = true
       ButtonAtaque.style.opacity = "0.6"
       ButtonAtaque.style.cursor = "not-allowed"
-      document.getElementById("blob").classList.add("damage")
-      OctElem.CreateEvent(()=>{
-        document.getElementById("blob").classList.remove("damage")
-        _Service_Cenabatalha.verificarTurnoBatalha()
-        _Service_Cenabatalha.CalculoAcao(Personagens_game.personagens.aliados[0][3][0])
+      if(_Service_Cenabatalha.CalculoAcao(Personagens_game.personagens.aliados[0][3][0])){
+        document.getElementById("blob").classList.add("damage") 
+      }
+      else
+      {
+        document.getElementById("Heroi").classList.add("damage")
+      }
+      OctElem.CreateEvent(()=>{       
+          document.getElementById("blob").classList.remove("damage")
+          document.getElementById("Heroi").classList.remove("damage")
+          Batalha = false
+          ButtonAtaque.style.opacity = "1"
+          ButtonAtaque.style.cursor = "allowed"
+          OctElem.StopEvent()
       },1000)
-      Batalha = true
     }
     
   })
