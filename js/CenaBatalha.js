@@ -39,10 +39,6 @@ class CenaBatalha{
         let RNG_Acao_calc = Math.floor(Math.random()*6)
         console.log(RNG_Acao_calc+" < RNG")
         console.log(Acao+" < Seu numero")
-        if(Acao.includes(RNG_Acao_calc))
-        {
-            console.log("Verdadeiro")
-        }
         return Acao.includes(RNG_Acao_calc) ? true : false
     }
 }
