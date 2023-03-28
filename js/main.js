@@ -54,6 +54,7 @@ function GenerateHudBase()
       OctElem.CreateEvent(()=>{
         document.getElementById("blob").classList.remove("damage")
         _Service_Cenabatalha.verificarTurnoBatalha()
+        _Service_Cenabatalha.CalculoAcao(Personagens_game.personagens.aliados[0][3][0])
       },1000)
       Batalha = true
     }
@@ -77,6 +78,7 @@ OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
 //Inicialização do Game
 let game_world = new Game()
 game_world.main()
+_Service_Cenabatalha.DefinirJogadores(Personagens_game.inimigos.inimigos_base[0],Personagens_game.personagens.aliados[0])
 
 //Render 
 OctElem.ExecuteScene("MakeTuto")

@@ -34,6 +34,10 @@ class CenaBatalha{
     QuebrarBatalha(){
         this.batalhaAtiva = false
     }
+    CalculoAcao(Acao)
+    {
+        console.log(Acao)
+    }
 }
 
 export default CenaBatalha

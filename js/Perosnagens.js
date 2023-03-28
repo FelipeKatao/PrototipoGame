@@ -1,8 +1,14 @@
 import Oct8 from "../Oct8-alpha/Oct8/Oct8.js"
 class Personagens{
-   
+    StatusAcerto = {
+      baixo:[1,2],
+      Media:[3,4,5],
+      Alta:[1,6,4,3]
+    }
     personagens = {
-     aliados:[["Heroi","../img/image832.png",10],"Mago"]
+     aliados:[["Heroi","../img/image832.png",10,
+     [this.StatusAcerto.Alta,this.StatusAcerto.baixo,this.StatusAcerto.baixo]]
+     ,["Mago"]]
     }
     inimigos= {
      inimigos_base:[["blob","../img/Enemyt.png",4]]
