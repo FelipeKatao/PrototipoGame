@@ -55,7 +55,7 @@ function GenerateHudBase()
     }
     
   })
-}
+} 
 
 // Gerar Cenas do Games
 function CreateTutobasic()
