@@ -1,6 +1,7 @@
 import Oct8 from "../Oct8-alpha/Oct8/Oct8.js"
 import Oct8Events from "../Oct8-alpha/Oct8/Oct8Events.js"
 import Personagens from "./Perosnagens.js"
+import CenaBatalha from "./CenaBatalha.js"
 
 //Classe de criação do mundo
  
@@ -29,6 +30,7 @@ class Game{
 var Batalha = false
 var OctElem = new Oct8()
 let Personagens_game = new Personagens()
+let _Service_Cenabatalha = new CenaBatalha()
 
 //Criação de Fabricas bases
 OctElem.CreateObjectFactory(Personagens_game.CreateChar,"Personagem")
@@ -42,6 +44,7 @@ function GenerateHudBase()
   ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
   ButtonAtaque.style.backgroundSize = "100%"
 
+  //Clique de  evento 
   ButtonAtaque.addEventListener("click",()=>{
     if(Batalha == false)
     {
@@ -50,6 +53,7 @@ function GenerateHudBase()
       document.getElementById("blob").classList.add("damage")
       OctElem.CreateEvent(()=>{
         document.getElementById("blob").classList.remove("damage")
+        _Service_Cenabatalha.verificarTurnoBatalha()
       },1000)
       Batalha = true
     }
@@ -63,6 +67,7 @@ function CreateTutobasic()
   OctElem.AppendObjectFacyotyTo("Personagem",Personagens_game.personagens.aliados[0])
   OctElem.AppendObjectFacyotyTo("Inimigo",Personagens_game.inimigos.inimigos_base[0])
   GenerateHudBase()
+  _Service_Cenabatalha.BatalhaAtiva()
 }
 
 OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
@@ -75,3 +80,7 @@ game_world.main()
 
 //Render 
 OctElem.ExecuteScene("MakeTuto")
+
+OctElem.CreateEvent(()=>{
+  console.log(_Service_Cenabatalha.Acao_escolhidas)
+},100)
