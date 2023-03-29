@@ -1,4 +1,4 @@
-import Oct8 from "../../Oct8-alpha/Oct8/Oct8.js"
+//import Oct8 from "../../Oct8-alpha/Oct8/Oct8.js"
 class CenaBatalha{
     batalhaAtiva = true 
     Acao_escolhidas = 0

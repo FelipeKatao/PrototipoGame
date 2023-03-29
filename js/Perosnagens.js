@@ -6,9 +6,9 @@ class Personagens{
       Alta:[1,6,4,3]
     }
     personagens = {
-     aliados:[["Heroi","../img/image832.png",10,
-     [this.StatusAcerto.baixo,this.StatusAcerto.baixo,this.StatusAcerto.baixo]]
-     ,["Mago"]]
+     Heroi:[["Heroi","../img/image832.png",10,
+     [this.StatusAcerto.baixo,this.StatusAcerto.baixo,this.StatusAcerto.baixo],10,10]],
+     mago:[["Nome da unidade","Imagem Personagem","Vida",["Ataque rate","Defesa Rate","Especial Rate"],"Ataque","Defesa"]]
     }
     inimigos= {
      inimigos_base:[["blob","../img/Enemyt.png",4]]

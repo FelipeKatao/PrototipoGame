@@ -2,6 +2,7 @@ import Oct8 from "../Oct8-alpha/Oct8/Oct8.js"
 import Oct8Events from "../Oct8-alpha/Oct8/Oct8Events.js"
 import Personagens from "./Perosnagens.js"
 import CenaBatalha from "./CenaBatalha.js"
+import cenas from "./cenas.js"
 
 //Classe de criação do mundo
  
@@ -31,60 +32,19 @@ var Batalha = false
 var OctElem = new Oct8()
 let Personagens_game = new Personagens()
 let _Service_Cenabatalha = new CenaBatalha()
+let _Cenas= new cenas()
 
 //Criação de Fabricas bases
 OctElem.CreateObjectFactory(Personagens_game.CreateChar,"Personagem")
 OctElem.CreateObjectFactory(Personagens_game.genrateEnemy,"Inimigo")
 
-//HUD do game
-function GenerateHudBase()
-{
-  var ButtonAtaque = OctElem.CreateContainerElement("Ataque_bt","conainer-base","bt_hud","button")
-  OctElem.ModifyPropsDefault(ButtonAtaque,[60],[-30],[8],[8])
-  ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
-  ButtonAtaque.style.backgroundSize = "100%"
-
-  //Clique de  evento 
-  ButtonAtaque.addEventListener("click",()=>{
-    console.log("Batalha: "+Batalha)
-    if(Batalha == false)
-    {
-      Batalha = true
-      ButtonAtaque.style.opacity = "0.6"
-      ButtonAtaque.style.cursor = "not-allowed"
-      if(_Service_Cenabatalha.CalculoAcao(Personagens_game.personagens.aliados[0][3][0])){
-        document.getElementById("blob").classList.add("damage")
-        let Elememt =  document.getElementById("blobbarraVida")
-        let Calc = parseInt(Elememt.style.width) - 4
-        Elememt.style.width = Calc+"vh"
-      }
-      else
-      {
-        document.getElementById("Heroi").classList.add("damage")
-        let Elememt =  document.getElementById("HeroibarraVida")
-        let Calc = parseInt(Elememt.style.width) - 4
-        Elememt.style.width = Calc+"vh"
-      }
-      OctElem.CreateEvent(()=>{       
-          document.getElementById("blob").classList.remove("damage")
-          document.getElementById("Heroi").classList.remove("damage")
-          VerificarDano()
-          Batalha = false
-          ButtonAtaque.style.opacity = "1"
-          ButtonAtaque.style.cursor = "allowed"
-          OctElem.StopEvent()
-      },1000)
-    }
-    
-  })
-} 
-
 // Gerar Cenas do Games
 function CreateTutobasic()
 {
-  OctElem.AppendObjectFacyotyTo("Personagem",Personagens_game.personagens.aliados[0])
+  OctElem.AppendObjectFacyotyTo("Personagem",Personagens_game.personagens.Heroi[0])
   OctElem.AppendObjectFacyotyTo("Inimigo",Personagens_game.inimigos.inimigos_base[0])
-  GenerateHudBase()
+  _Cenas.renderHudBasic("")
+  _Cenas.addAtaqueButton(_Service_Cenabatalha,Personagens_game.personagens.Heroi,Personagens_game.inimigos.inimigos_base,Batalha)
   _Service_Cenabatalha.BatalhaAtiva()
 }
 
@@ -95,7 +55,7 @@ OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
 //Inicialização do Game
 let game_world = new Game()
 game_world.main()
-_Service_Cenabatalha.DefinirJogadores(Personagens_game.inimigos.inimigos_base[0],Personagens_game.personagens.aliados[0])
+_Service_Cenabatalha.DefinirJogadores(Personagens_game.inimigos.inimigos_base[0],Personagens_game.personagens.Heroi[0])
 
 //Render 
 OctElem.ExecuteScene("MakeTuto")
