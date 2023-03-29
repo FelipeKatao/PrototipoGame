@@ -37,8 +37,6 @@ class CenaBatalha{
     CalculoAcao(Acao)
     {
         let RNG_Acao_calc = Math.floor(Math.random()*6)+1
-        console.log(RNG_Acao_calc+" < RNG")
-        console.log(Acao+" < Seu numero")
         return Acao.includes(RNG_Acao_calc) ? true : false
     }
     DefinirAcaoAdversario()

@@ -12,7 +12,6 @@ class cenas{
             ButtonAtaque.style.backgroundSize = "100%"
         }
     }
-
     addAtaqueButton(Servicevariavelbatalha,Personagem,Inimigo,variavelbatalha)
     {
         let ButtonAtaque = document.getElementById("Ataque_bt")
@@ -47,6 +46,17 @@ class cenas{
             }
         },false)
         
+    }
+    cenaTutorialGenerico(Servicevariavelbatalha,ServiceCenas,Personagem,variavelbatalha,inimigo,Oct8){
+        console.log(":D")
+        Servicevariavelbatalha.DefinirJogadores(inimigo[0],Personagem[0])
+        document.getElementById("conainer-base").style.backgroundImage="url('../img/Cena da floresta.png')"
+        document.getElementById("conainer-base").style.backgroundSize = "100%"
+        Oct8.AppendObjectFacyotyTo("Personagem",Personagem[0])
+        Oct8.AppendObjectFacyotyTo("Inimigo",inimigo[0])
+        ServiceCenas.renderHudBasic("")
+        ServiceCenas.addAtaqueButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
+        Servicevariavelbatalha.BatalhaAtiva()
     }
 }
 
