@@ -6,6 +6,18 @@ class CenaBatalha{
     Adversario_batalha = null 
     Jogador_batalha = null
 
+    _stats_personagem={
+        Ataque:0,
+        Defesa:0,
+        Especial:0
+    }
+
+    _stats_Adversario={
+        Ataque:0,
+        Defesa:0,
+        Especial:0
+    }
+
     verificarTurnoBatalha(){
         if(this.Acao_escolhidas >= this.Acao_turno)
         {
@@ -43,6 +55,9 @@ class CenaBatalha{
     {
         let RNG_Acao_adversario_calc = Math.floor(Math.random()*3)+1
         return RNG_Acao_adversario_calc
+    }
+    AdicionarStatusPersonagem(Status){
+        this._stats_personagem[Status]+=1
     }
 }
 

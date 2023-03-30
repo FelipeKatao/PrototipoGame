@@ -10,9 +10,12 @@ class cenas{
             OctElem.ModifyPropsDefault(ButtonAtaque,[60],[-30],[8],[8])
             ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
             ButtonAtaque.style.backgroundSize = "100%"
+
+            var avisoEfeitos = OctElem.CreateContainerElement("AvisoEfeitos","conainer-base","aviso01","div")
+            OctElem.ModifyPropsDefault(avisoEfeitos,[62],[-58],[80],[20])
         }
     }
-    addAtaqueButton(Servicevariavelbatalha,Personagem,Inimigo,variavelbatalha)
+    addAtaqueButton(Servicevariavelbatalha,Personagem,Inimigo,variavelbatalha,_Service_Cenabatalha)
     {
         let ButtonAtaque = document.getElementById("Ataque_bt")
         var OctElem = new Oct8()
@@ -23,6 +26,7 @@ class cenas{
               ButtonAtaque.style.opacity = "0.6"
               ButtonAtaque.style.cursor = "not-allowed"
               if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][0])){
+                Servicevariavelbatalha.AdicionarStatusPersonagem("Ataque")
                 document.getElementById(Inimigo[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Inimigo[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 4
@@ -41,6 +45,7 @@ class cenas{
                   variavelbatalha = false
                   ButtonAtaque.style.opacity = "1"
                   ButtonAtaque.style.cursor = "allowed"
+                  console.log(Servicevariavelbatalha._stats_personagem)
                   OctElem.StopEvent()
               },1000)
             }
@@ -48,7 +53,6 @@ class cenas{
         
     }
     cenaTutorialGenerico(Servicevariavelbatalha,ServiceCenas,Personagem,variavelbatalha,inimigo,Oct8){
-        console.log(":D")
         Servicevariavelbatalha.DefinirJogadores(inimigo[0],Personagem[0])
         document.getElementById("conainer-base").style.backgroundImage="url('../img/Cena da floresta.png')"
         document.getElementById("conainer-base").style.backgroundSize = "100%"
