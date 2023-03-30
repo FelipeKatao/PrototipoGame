@@ -56,8 +56,9 @@ class CenaBatalha{
         let RNG_Acao_adversario_calc = Math.floor(Math.random()*3)+1
         return RNG_Acao_adversario_calc
     }
-    AdicionarStatusPersonagem(Status){
+    AdicionarStatusPersonagem(Status,aviso){
         this._stats_personagem[Status]+=1
+        document.getElementById("AvisoEfeitos").innerHTML+="<spam>Você </spam>"+aviso+"</br>"
     }
 }
 
