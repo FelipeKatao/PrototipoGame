@@ -58,7 +58,11 @@ class CenaBatalha{
     }
     AdicionarStatusPersonagem(Status,aviso){
         this._stats_personagem[Status]+=1
-        document.getElementById("AvisoEfeitos").innerHTML+="<spam>Você </spam>"+aviso+"</br>"
+        document.getElementById("AvisoEfeitos").innerHTML+="<spam class='player-aviso'>Você </spam>"+aviso+"</br>"
+    }
+    AdicionarStatusAdversario(status,aviso){
+        this._stats_Adversario[status]+=1
+        document.getElementById("AvisoEfeitos").innerHTML+="<spam class='adv-aviso'>Inimigo </spam>"+aviso+"</br>"
     }
 }
 

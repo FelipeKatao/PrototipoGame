@@ -34,6 +34,7 @@ class cenas{
               }
               else
               {
+                Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 5 de dano.")
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 4

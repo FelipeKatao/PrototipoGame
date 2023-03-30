@@ -39,9 +39,12 @@ body{
     padding: 2vh;
     overflow-x: hidden;
 }
-#AvisoEfeitos spam
+.player-aviso
 {
     color: #8181ff;
+}
+.adv-aviso{
+    color: #ff0000;
 }
 
 @keyframes Damage_anim{
