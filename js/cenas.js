@@ -53,10 +53,10 @@ class cenas{
                   document.getElementById(Inimigo[0][0]).classList.remove("damage")
                   variavelbatalha = false
                   ButtonAtaque.style.opacity = "1"
-                  ButtonAtaque.style.cursor = "allowed"
+                  ButtonAtaque.style.cursor = "pointer"
                   
                   ButtonDefesa.style.opacity = "1"
-                  ButtonDefesa.style.cursor = "allowed"
+                  ButtonDefesa.style.cursor = "pointer"
                   console.log(Servicevariavelbatalha._stats_personagem)
                   OctElem.StopEvent()
               },1000)
@@ -94,10 +94,10 @@ class cenas{
                   document.getElementById(Personagem[0][0]).classList.remove("damage")
                   variavelbatalha = false
                   ButtonAtaque.style.opacity = "1"
-                  ButtonAtaque.style.cursor = "allowed"
+                  ButtonAtaque.style.cursor = "pointer"
                   
                   ButtonDefesa.style.opacity = "1"
-                  ButtonDefesa.style.cursor = "allowed"
+                  ButtonDefesa.style.cursor = "pointer"
                   console.log(Servicevariavelbatalha._stats_personagem)
                   OctElem.StopEvent()
               },1000)
