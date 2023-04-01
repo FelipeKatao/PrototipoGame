@@ -138,18 +138,17 @@ class cenas{
             ButtonEspecial.style.opacity = "0.6"
             ButtonEspecial.style.cursor = "not-allowed"
             if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][0])){
-              Servicevariavelbatalha.AdicionarStatusPersonagem("Ataque","aplicou 10 de dano.")
-              document.getElementById(Inimigo[0][0]).classList.add("damage")
-              let Elememt =  document.getElementById(Inimigo[0][0]+"barraVida")
-              let Calc = parseInt(Elememt.style.width) - 4
+              Servicevariavelbatalha.AdicionarStatusPersonagem("Especial"," recuperou 5 de energia.")
+              let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
+              let Calc = parseInt(Elememt.style.width) + 2
               Elememt.style.width = Calc+"vh"
             }
             else
             {
-              Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 5 de dano.")
+              Servicevariavelbatalha.AdicionarStatusAdversario("Especial","Aplicou 2 de dano.")
               document.getElementById(Personagem[0][0]).classList.add("damage")
               let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
-              let Calc = parseInt(Elememt.style.width) - 4
+              let Calc = parseInt(Elememt.style.width) - 1
               Elememt.style.width = Calc+"vh"
             }
             OctElem.CreateEvent(()=>{       

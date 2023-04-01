@@ -38,6 +38,7 @@ body{
     color: #FFF;
     padding: 2vh;
     overflow-x: hidden;
+    overflow: auto
 }
 .player-aviso
 {
