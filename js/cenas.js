@@ -62,7 +62,7 @@ class cenas{
               },1000)
             }
         },false)
-        
+          
     }
 
     addDefesaButton(Servicevariavelbatalha,Personagem,Inimigo,variavelbatalha,_Service_Cenabatalha)
