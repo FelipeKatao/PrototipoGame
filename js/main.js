@@ -19,7 +19,7 @@ OctElem.CreateObjectFactory(Personagens_game.genrateEnemy,"Inimigo")
 function CreateTutobasic()
 {
   _Cenas.cenaTutorialGenerico(_Service_Cenabatalha,_Cenas,Personagens_game.personagens.Heroi,Batalha,Personagens_game.inimigos.inimigos_base,OctElem)
-}
+} 
 
 OctElem.NewScene("MakeTuto",[CreateTutobasic],10,10)
 OctElem.ExecuteScene("MakeTuto")
