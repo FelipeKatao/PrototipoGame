@@ -17,7 +17,7 @@ class Personagens{
     CreateChar(persogem){
         let  OctElem = new Oct8()
         var char = OctElem.CreateContainerElement(persogem[0],"conainer-base",null,"div")
-        OctElem.ModifyPropsDefault(char,[50],[40],[40],[40])
+        OctElem.ModifyPropsDefault(char,[50],[30],[40],[40])
         char.style.backgroundImage = "url('"+persogem[1]+"')"
         char.style.backgroundSize = "100%"
       
@@ -28,7 +28,7 @@ class Personagens{
       genrateEnemy(inimigo){
         let  OctElem = new Oct8()
         var enemy = OctElem.CreateContainerElement(inimigo[0],"conainer-base","animateChar","div")
-        OctElem.ModifyPropsDefault(enemy,[120],[-50],[20],[20])
+        OctElem.ModifyPropsDefault(enemy,[120],[-40],[20],[20])
         enemy.style.backgroundImage = "url('"+inimigo[1]+"')"
         enemy.style.backgroundSize = "100%"
       

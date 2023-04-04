@@ -6,18 +6,18 @@ class cenas{
         var OctElem = new Oct8()
         if(expetions=="")
         {
-            var ButtonAtaque = OctElem.CreateContainerElement("Ataque_bt","conainer-base","bt_hud","button")
-            OctElem.ModifyPropsDefault(ButtonAtaque,[30],[-30],[8],[8])
+            var ButtonAtaque = OctElem.CreateContainerElement("Ataque_bt","conainer-base","card_select","div")
+            OctElem.ModifyPropsDefault(ButtonAtaque,[30],[20],[20],[20])
             ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
             ButtonAtaque.style.backgroundSize = "100%"
 
-            var ButtonDefesa = OctElem.CreateContainerElement("Defesa_bt","conainer-base","bt_hud","button")
-            OctElem.ModifyPropsDefault(ButtonDefesa,[38],[-30],[8],[8])
+            var ButtonDefesa = OctElem.CreateContainerElement("Defesa_bt","conainer-base","card_select","div")
+            OctElem.ModifyPropsDefault(ButtonDefesa,[60],[20],[20],[20])
             ButtonDefesa.style.backgroundImage = "url('../img/escudo.jpg')"
             ButtonDefesa.style.backgroundSize = "100%"
             
-            var ButtonDefesa = OctElem.CreateContainerElement("Especial_bt","conainer-base","bt_hud","button")
-            OctElem.ModifyPropsDefault(ButtonDefesa,[22],[-30],[8],[8])
+            var ButtonDefesa = OctElem.CreateContainerElement("Especial_bt","conainer-base","card_select","div")
+            OctElem.ModifyPropsDefault(ButtonDefesa,[90],[20],[20],[20])
             ButtonDefesa.style.backgroundImage = "url('../img/magia.jpg"
             ButtonDefesa.style.backgroundSize = "100%"
 
