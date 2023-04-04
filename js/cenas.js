@@ -10,7 +10,7 @@ class cenas{
             var ButtonAtaque = OctElem.CreateContainerElement("Ataque_bt","conainer-base","card_select","div")
             OctElem.ModifyPropsDefault(ButtonAtaque,[30],[20],[20],[20])
             elementoBase = OctElem.CreateContainerElement("ataque_title","Ataque_bt","title_card","div")
-            OctElem.ModifyPropsDefault(elementoBase,[0],[1],['100%'],[4])
+            OctElem.ModifyPropsDefault(elementoBase,[0],[1],[17],[4])
             elementoBase.innerText= "Atacar"
             ButtonAtaque.style.backgroundImage = "url('../img/Ataque.png')"
             ButtonAtaque.style.backgroundSize = "100%"
@@ -18,7 +18,7 @@ class cenas{
             var ButtonDefesa = OctElem.CreateContainerElement("Defesa_bt","conainer-base","card_select","div")
             OctElem.ModifyPropsDefault(ButtonDefesa,[60],[20],[20],[20])
             elementoBase = OctElem.CreateContainerElement("defesa_title","Defesa_bt","title_card","div")
-            OctElem.ModifyPropsDefault(elementoBase,[0],[1],['100%'],[4])
+            OctElem.ModifyPropsDefault(elementoBase,[0],[1],[17],[4])
             elementoBase.innerText= "Defender"
             ButtonDefesa.style.backgroundImage = "url('../img/escudo.jpg')"
             ButtonDefesa.style.backgroundSize = "100%"
@@ -26,7 +26,7 @@ class cenas{
             var ButtonDefesa = OctElem.CreateContainerElement("Especial_bt","conainer-base","card_select","div")
             OctElem.ModifyPropsDefault(ButtonDefesa,[90],[20],[20],[20])
             elementoBase = OctElem.CreateContainerElement("especial_title","Especial_bt","title_card","div")
-            OctElem.ModifyPropsDefault(elementoBase,[0],[1],['100%'],[4])
+            OctElem.ModifyPropsDefault(elementoBase,[0],[1],[17],[4])
             elementoBase.innerText= "Especial"
             ButtonDefesa.style.backgroundImage = "url('../img/magia.jpg"
             ButtonDefesa.style.backgroundSize = "100%"
