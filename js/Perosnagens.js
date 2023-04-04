@@ -12,7 +12,7 @@ class Personagens{
     }
     inimigos= {
      inimigos_base:[["blob","../img/Enemyt.png",4]]
-    }
+    }  
 
     CreateChar(persogem){
         let  OctElem = new Oct8()
