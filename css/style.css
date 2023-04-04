@@ -33,6 +33,10 @@ body{
     position: absolute;  
     background-color: #FFF;
     border-radius: 2vh;
+    transition: 2s;
+}
+.card_select :hover{
+    transform: rotate(2deg);
 }
 .aviso01{
     background-color: black;
@@ -51,6 +55,18 @@ body{
 .adv-aviso{
     color: #ff0000;
 }
+
+.title_card{
+    background-color: #ff0000;
+    border-radius: 2vh;
+    color: #FFF;
+    font-family: 'Chivo Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 2vh;
+    font-size: 3vh;
+}
+
 
 @keyframes Damage_anim{
     0% { filter: brightness(200%); opacity: 0.8;}
