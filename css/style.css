@@ -66,6 +66,10 @@ body{
     padding-left: 2vh;
     font-size: 3vh;
 }
+.cardButtonStatus
+{
+    background-color: #fcfc8a;
+}
 
 
 @keyframes Damage_anim{

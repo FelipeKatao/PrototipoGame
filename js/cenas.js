@@ -191,6 +191,14 @@ class cenas{
         ServiceCenas.addDefesaButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
         ServiceCenas.addEspecialButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
         Servicevariavelbatalha.BatalhaAtiva()
+        this.statusCardPersonagem(Personagem)
+    }
+
+    statusCardPersonagem(PerosnagemService){
+      var OctElem = new Oct8()
+      var cardPersonagem = OctElem.CreateContainerElement("Personagem_Card","idd","cardButtonStatus","div")
+      OctElem.ModifyPropsDefault(cardPersonagem,[10],[20],[80],[20])
+      
     }
 }
 
