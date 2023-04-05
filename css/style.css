@@ -82,6 +82,11 @@ body{
     margin-left: 40vh;
     margin-top: -4vh;
 }
+#Personagem_Card h3 {
+    color: #8181ff;
+    margin-left: 10vh;
+    margin-top: 7vh;
+}
 .image_Card{
     background-size: 100%;
     margin-top: 2vh;

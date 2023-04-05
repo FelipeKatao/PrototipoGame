@@ -65,6 +65,7 @@ class cenas{
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 4
+                Personagem[0][2] = Personagem[0][2]-4
                 Elememt.style.width = Calc+"vh"
               }
               OctElem.CreateEvent(()=>{       
@@ -112,6 +113,7 @@ class cenas{
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 8
+                Personagem[0][2] = Personagem[0][2]-8
                 Elememt.style.width = Calc+"vh"
               }
               OctElem.CreateEvent(()=>{       
@@ -152,6 +154,7 @@ class cenas{
               Servicevariavelbatalha.AdicionarStatusPersonagem("Especial"," recuperou 5 de energia.")
               let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
               let Calc = parseInt(Elememt.style.width) + 2
+              Personagem[0][2] = Personagem[0][2]+5
               Elememt.style.width = Calc+"vh"
             }
             else
@@ -160,6 +163,7 @@ class cenas{
               document.getElementById(Personagem[0][0]).classList.add("damage")
               let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
               let Calc = parseInt(Elememt.style.width) - 1
+              Personagem[0][2] = Personagem[0][2]-2
               Elememt.style.width = Calc+"vh"
             }
             OctElem.CreateEvent(()=>{       
@@ -220,7 +224,12 @@ class cenas{
       elemento_generico = OctElem.CreateContainerElement("","Personagem_Card","image_Card","div")
       OctElem.ModifyPropsDefault(elemento_generico,null,null,[20],[20])
       elemento_generico.style.backgroundImage = "url("+PerosnagemService[0][1]+")"
-      
+
+      elemento_generico =OctElem.CreateContainerElement("","Personagem_Card","","h3")
+      console.log(PerosnagemService[0][2]/2)
+
+      elemento_generico.innerHTML="Vida: "+PerosnagemService[0][2]
+      OctElem.ModifyPropsDefault(elemento_generico,null,null,null,null)
 
       document.getElementById("Close_card_bt").addEventListener("click",()=>{
         this.Card_ativo = false
