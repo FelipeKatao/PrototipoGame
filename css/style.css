@@ -77,6 +77,16 @@ body{
 {
     color: #ff0000;
 }
+#Personagem_Card h1 {
+    color: #8181ff;
+    margin-left: 40vh;
+    margin-top: -4vh;
+}
+.image_Card{
+    background-size: 100%;
+    margin-top: 2vh;
+    margin-left: 38vh;
+}
 
 @keyframes Damage_anim{
     0% { filter: brightness(200%); opacity: 0.8;}

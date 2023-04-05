@@ -210,11 +210,19 @@ class cenas{
       let cardPersonagem = OctElem.CreateContainerElement("Personagem_Card","conainer-base","cardButtonStatus","div")
       OctElem.ModifyPropsDefault(cardPersonagem,[56],[-20],[90],[80])
       elemento_generico = OctElem.CreateContainerElement("Close_card_bt","Personagem_Card","close_card","button")
-      OctElem.ModifyPropsDefault(elemento_generico,[83],[2],[6],[6])
-      elemento_generico = OctElem
       elemento_generico.innerText="X"
+      
+      OctElem.ModifyPropsDefault(elemento_generico,[83],[2],[6],[6])
+      elemento_generico = OctElem.CreateContainerElement("","Personagem_Card","","h1")
+      OctElem.ModifyPropsDefault(elemento_generico,null,null,null,null)
+      elemento_generico.innerText = PerosnagemService[0][0]
 
-      elemento_generico.addEventListener("click",()=>{
+      elemento_generico = OctElem.CreateContainerElement("","Personagem_Card","image_Card","div")
+      OctElem.ModifyPropsDefault(elemento_generico,null,null,[20],[20])
+      elemento_generico.style.backgroundImage = "url("+PerosnagemService[0][1]+")"
+      
+
+      document.getElementById("Close_card_bt").addEventListener("click",()=>{
         this.Card_ativo = false
         cardPersonagem.remove()
       })
