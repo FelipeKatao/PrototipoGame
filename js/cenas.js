@@ -1,6 +1,7 @@
 import Oct8 from "../Oct8-alpha/Oct8/Oct8.js"
 
 class cenas{
+    Card_ativo =false
     renderHudBasic(expetions)
     {
         var OctElem = new Oct8()
@@ -42,7 +43,7 @@ class cenas{
         let ButtonEspecial = document.getElementById("Especial_bt")
         var OctElem = new Oct8()
         ButtonAtaque.addEventListener("click",()=>{
-            if(variavelbatalha == false)
+            if(variavelbatalha == false && this.Card_ativo == false)
             {
               variavelbatalha = true
               ButtonAtaque.style.opacity = "0.6"
@@ -92,7 +93,7 @@ class cenas{
         let ButtonEspecial = document.getElementById("Especial_bt")
         var OctElem = new Oct8()
         ButtonDefesa.addEventListener("click",()=>{
-            if(variavelbatalha == false)
+            if(variavelbatalha == false  && this.Card_ativo == false)
             {
               variavelbatalha = true
               ButtonAtaque.style.opacity = "0.6"
@@ -138,7 +139,7 @@ class cenas{
       let ButtonEspecial = document.getElementById("Especial_bt")
       var OctElem = new Oct8()
       ButtonEspecial.addEventListener("click",()=>{
-          if(variavelbatalha == false)
+          if(variavelbatalha == false && this.Card_ativo == false)
           {
             variavelbatalha = true
             ButtonAtaque.style.opacity = "0.6"
@@ -184,21 +185,39 @@ class cenas{
         Servicevariavelbatalha.DefinirJogadores(inimigo[0],Personagem[0])
         document.getElementById("conainer-base").style.backgroundImage="url('../img/Cena da floresta.png')"
         document.getElementById("conainer-base").style.backgroundSize = "100%"
+        console.log(Personagem[0][0])
         Oct8.AppendObjectFacyotyTo("Personagem",Personagem[0])
+        document.getElementById(Personagem[0][0]).addEventListener("click",()=>{
+          if(this.Card_ativo == false)
+          {
+            this.statusCardPersonagem(Personagem)
+            this.Card_ativo = true
+          }
+          
+        },false)
         Oct8.AppendObjectFacyotyTo("Inimigo",inimigo[0])
         ServiceCenas.renderHudBasic("")
         ServiceCenas.addAtaqueButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
         ServiceCenas.addDefesaButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
         ServiceCenas.addEspecialButton(Servicevariavelbatalha,Personagem,inimigo,variavelbatalha)
         Servicevariavelbatalha.BatalhaAtiva()
-        this.statusCardPersonagem(Personagem)
+
     }
 
     statusCardPersonagem(PerosnagemService){
-      var OctElem = new Oct8()
-      var cardPersonagem = OctElem.CreateContainerElement("Personagem_Card","idd","cardButtonStatus","div")
-      OctElem.ModifyPropsDefault(cardPersonagem,[10],[20],[80],[20])
-      
+      let OctElem = new Oct8()
+      let elemento_generico
+      let cardPersonagem = OctElem.CreateContainerElement("Personagem_Card","conainer-base","cardButtonStatus","div")
+      OctElem.ModifyPropsDefault(cardPersonagem,[56],[-20],[90],[80])
+      elemento_generico = OctElem.CreateContainerElement("Close_card_bt","Personagem_Card","close_card","button")
+      OctElem.ModifyPropsDefault(elemento_generico,[83],[2],[6],[6])
+      elemento_generico = OctElem
+      elemento_generico.innerText="X"
+
+      elemento_generico.addEventListener("click",()=>{
+        this.Card_ativo = false
+        cardPersonagem.remove()
+      })
     }
 }
 
