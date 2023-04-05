@@ -69,8 +69,14 @@ body{
 .cardButtonStatus
 {
     background-color: #fcfc8a;
+    border-radius: 3vh;
+    position: fixed;
+    z-index: 100;
 }
-
+.Close_card_b
+{
+    color: #ff0000;
+}
 
 @keyframes Damage_anim{
     0% { filter: brightness(200%); opacity: 0.8;}
