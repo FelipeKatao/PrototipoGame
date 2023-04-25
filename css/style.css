@@ -24,6 +24,22 @@ body{
     animation-iteration-count: infinite;
 }
 
+.moveChar_player{
+    animation-name: Move_char_player;
+    animation-duration: 0.8s;
+    animation-iteration-count: 2;
+    animation-direction: alternate
+}
+
+
+.moveChar_enemy{
+    animation-name: Move_char_player;
+    animation-duration: 0.8s;
+    animation-iteration-count: 2;
+    animation-direction: alternate
+}
+
+
 .damage{
     animation-name: Damage_anim;
     animation-duration: 0.5s;
@@ -91,6 +107,17 @@ body{
     background-size: 100%;
     margin-top: 2vh;
     margin-left: 38vh;
+}
+
+@keyframes Move_char_player{
+    0% {margin-left: 50vh; margin-top: 30vh;}
+    50%{margin-left: 90vh; margin-top: 28vh;}
+    100%{margin-left: 90vh; margin-top: 30vh;}
+}
+@keyframes Move_char_enemy{
+    0% {margin-left: 120vh; margin-top: -40vh;}
+    50%{margin-left: 80vh; margin-top: -32vh;}
+    100%{margin-left: 120vh; margin-top: -40vh;}
 }
 
 @keyframes Damage_anim{

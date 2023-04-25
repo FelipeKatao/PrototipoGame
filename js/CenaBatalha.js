@@ -64,6 +64,20 @@ class CenaBatalha{
         this._stats_Adversario[status]+=1
         document.getElementById("AvisoEfeitos").innerHTML+="<spam class='adv-aviso'>Inimigo </spam>"+aviso+"</br>"
     }
+    moveCharAtaque(typeEvent,Element,octEvent)
+    {
+      if(typeEvent == "char")
+      {
+        document.getElementById(Element).classList.add("moveChar_player")
+        octEvent.CreateEvent(()=>{
+            document.getElementById(Element).classList.remove("moveChar_player")
+        },1200)
+      }
+      else
+      {
+
+      }
+    }
 }
 
 export default CenaBatalha

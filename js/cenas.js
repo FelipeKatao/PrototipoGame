@@ -53,6 +53,7 @@ class cenas{
               ButtonEspecial.style.opacity = "0.6"
               ButtonEspecial.style.cursor = "not-allowed"
               if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][0])){
+                Servicevariavelbatalha.moveCharAtaque("char",Personagem[0][0],OctElem)
                 Servicevariavelbatalha.AdicionarStatusPersonagem("Ataque","aplicou 10 de dano.")
                 document.getElementById(Inimigo[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Inimigo[0][0]+"barraVida")
