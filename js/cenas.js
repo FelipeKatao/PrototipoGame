@@ -53,7 +53,7 @@ class cenas{
               ButtonEspecial.style.opacity = "0.6"
               ButtonEspecial.style.cursor = "not-allowed"
               if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][0])){
-                Servicevariavelbatalha.moveCharAtaque("char",Personagem[0][0],OctElem)
+                document.getElementById(Personagem[0][0]).classList.add("moveChar_player")
                 Servicevariavelbatalha.AdicionarStatusPersonagem("Ataque","aplicou 10 de dano.")
                 document.getElementById(Inimigo[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Inimigo[0][0]+"barraVida")
@@ -63,7 +63,7 @@ class cenas{
               else
               {
                 Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 5 de dano.")
-                Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
+                document.getElementById(Inimigo[0][0]).classList.add("moveChar_enemy")
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 4
@@ -73,6 +73,8 @@ class cenas{
               OctElem.CreateEvent(()=>{       
                   document.getElementById(Personagem[0][0]).classList.remove("damage")
                   document.getElementById(Inimigo[0][0]).classList.remove("damage")
+                  document.getElementById(Personagem[0][0]).classList.remove("moveChar_player")    
+                  document.getElementById(Inimigo[0][0]).classList.remove("moveChar_enemy")              
                   variavelbatalha = false
                   ButtonAtaque.style.opacity = "1"
                   ButtonAtaque.style.cursor = "pointer"
@@ -107,13 +109,13 @@ class cenas{
               ButtonEspecial.style.cursor = "not-allowed"
 
               if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][1])){
-                Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
+                document.getElementById(Inimigo[0][0]).classList.add("moveChar_enemy")
                 Servicevariavelbatalha.AdicionarStatusPersonagem("Defesa","se defendeu.")
               }
               else
               {
                 Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 10 de dano.")
-                Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
+                document.getElementById(Inimigo[0][0]).classList.add("moveChar_enemy")
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 8
@@ -121,7 +123,8 @@ class cenas{
                 Elememt.style.width = Calc+"vh"
               }
               OctElem.CreateEvent(()=>{       
-                  document.getElementById(Personagem[0][0]).classList.remove("damage")
+                  document.getElementById(Personagem[0][0]).classList.remove("damage")  
+                  document.getElementById(Inimigo[0][0]).classList.remove("moveChar_enemy")  
                   variavelbatalha = false
                   ButtonAtaque.style.opacity = "1"
                   ButtonAtaque.style.cursor = "pointer"
@@ -164,7 +167,7 @@ class cenas{
             else
             {
               Servicevariavelbatalha.AdicionarStatusAdversario("Especial","Aplicou 2 de dano.")
-              Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
+              document.getElementById(Inimigo[0][0]).classList.add("moveChar_enemy")
               document.getElementById(Personagem[0][0]).classList.add("damage")
               let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
               let Calc = parseInt(Elememt.style.width) - 1
@@ -174,6 +177,7 @@ class cenas{
             OctElem.CreateEvent(()=>{       
                 document.getElementById(Personagem[0][0]).classList.remove("damage")
                 document.getElementById(Inimigo[0][0]).classList.remove("damage")
+                document.getElementById(Inimigo[0][0]).classList.remove("moveChar_enemy") 
                 variavelbatalha = false
                 ButtonAtaque.style.opacity = "1"
                 ButtonAtaque.style.cursor = "pointer"

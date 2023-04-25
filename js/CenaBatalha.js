@@ -72,6 +72,7 @@ class CenaBatalha{
         octEvent.CreateEvent(()=>{
             document.getElementById(Element).classList.remove("moveChar_player")
            //octEvent.StopEvent()
+           console.log("Putzzz")
         },1200)
       }
       else
@@ -79,7 +80,7 @@ class CenaBatalha{
         document.getElementById(Element).classList.add("moveChar_enemy")
         octEvent.CreateEvent(()=>{
             document.getElementById(Element).classList.remove("moveChar_enemy")
-            //octEvent.StopEvent()
+            octEvent.StopEvent()
         },1200)
       }
     }
