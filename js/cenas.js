@@ -64,7 +64,6 @@ class cenas{
               {
                 Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 5 de dano.")
                 Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
-                console.log(":D")
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 4
@@ -108,11 +107,13 @@ class cenas{
               ButtonEspecial.style.cursor = "not-allowed"
 
               if(Servicevariavelbatalha.CalculoAcao(Personagem[0][3][1])){
+                Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
                 Servicevariavelbatalha.AdicionarStatusPersonagem("Defesa","se defendeu.")
               }
               else
               {
                 Servicevariavelbatalha.AdicionarStatusAdversario("Ataque","Aplicou 10 de dano.")
+                Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
                 document.getElementById(Personagem[0][0]).classList.add("damage")
                 let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
                 let Calc = parseInt(Elememt.style.width) - 8
@@ -163,6 +164,7 @@ class cenas{
             else
             {
               Servicevariavelbatalha.AdicionarStatusAdversario("Especial","Aplicou 2 de dano.")
+              Servicevariavelbatalha.moveCharAtaque("enem",Inimigo[0][0],OctElem)
               document.getElementById(Personagem[0][0]).classList.add("damage")
               let Elememt =  document.getElementById(Personagem[0][0]+"barraVida")
               let Calc = parseInt(Elememt.style.width) - 1
