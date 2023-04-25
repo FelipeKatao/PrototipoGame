@@ -71,11 +71,16 @@ class CenaBatalha{
         document.getElementById(Element).classList.add("moveChar_player")
         octEvent.CreateEvent(()=>{
             document.getElementById(Element).classList.remove("moveChar_player")
+           //octEvent.StopEvent()
         },1200)
       }
       else
       {
-
+        document.getElementById(Element).classList.add("moveChar_enemy")
+        octEvent.CreateEvent(()=>{
+            document.getElementById(Element).classList.remove("moveChar_enemy")
+            //octEvent.StopEvent()
+        },1200)
       }
     }
 }

@@ -33,9 +33,9 @@ body{
 
 
 .moveChar_enemy{
-    animation-name: Move_char_player;
+    animation-name: Move_char_enemy;
     animation-duration: 0.8s;
-    animation-iteration-count: 2;
+    animation-iteration-count: 1;
     animation-direction: alternate
 }
 
