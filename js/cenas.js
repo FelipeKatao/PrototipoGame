@@ -164,7 +164,7 @@ class cenas{
               Personagem[0][2] = Personagem[0][2]+5
               Elememt.style.width = Calc+"vh"
             }
-            else
+            else 
             {
               Servicevariavelbatalha.AdicionarStatusAdversario("Especial","Aplicou 2 de dano.")
               document.getElementById(Inimigo[0][0]).classList.add("moveChar_enemy")
